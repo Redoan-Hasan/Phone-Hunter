@@ -10,7 +10,15 @@ const displayPhone = (phones,isShowAll) => {
     
     const phoneContainer = document.getElementById('phone-container');
     phoneContainer.innerHTML = '';
-    
+    const NoDataValidation = document.getElementById('NoDataValidation');
+    if (phones.length == 0) {
+        NoDataValidation.innerHTML =
+            `<div class="text-center">
+            <h3 class=" text-4xl text-red-600 font-extrabold text-danger py-5">No Phone Found</h3>
+            </div>
+            `;
+
+    }
     // console.log(phones);
     // hiding showAllBtn 
     const showAllBtn = document.getElementById('showAllBtn');
