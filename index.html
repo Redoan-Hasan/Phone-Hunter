@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Hunter</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html{
+            background-color: white!important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <section class="">
+            <div class="flex gap-0 justify-center mt-4">
+                <input id="inputField" type="text" placeholder="Search your phone" class="bg-[#100F0F0D] input input-bordered w-full max-w-xs rounded-r-none" />
+                <button onclick="handleSearch()" class="btn btn-accent rounded-l-none">Search</button>
+            </div>
+        </section>
+        <section class="container mx-auto my-12">
+            <div class="text-center my-40 hidden" id="loadingSpinner">
+                <span class="loading loading-spinner loading-lg text-secondary"></span>
+            </div>
+            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-16">
+            </div>
+            <div  class="mx-auto flex justify-center mt-8">
+                <button  onclick="handleShowAllBtn()" id="showAllBtn" class="btn btn-accent btn-wide text-white text-xl font-semibold hidden ">Show All</button>
+            </div>
+        </section>
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle ">
+            <div class="modal-box flex flex-col items-center bg-white w-[500px]">
+                <div id="detailsModal">
+
+                </div>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button onclick="clearModal =(div) =>{
+                            div.innerHTML ='';
+                        }" class="btn btn-accent btn-wide">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="./scripts/script.js"></script>
+</body>
+</html>
+
+<!-- <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box">
+        <h3 class="text-lg font-bold">Hello!</h3>
+        <p class="py-4">Press ESC key or click the button below to close</p>
+        <div class="modal-action">
+            <form method="dialog">
+                <button class="btn">Close</button>
+            </form>
+        </div>
+    </div>
+</dialog> -->
